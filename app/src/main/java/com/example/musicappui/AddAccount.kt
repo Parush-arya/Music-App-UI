@@ -5,6 +5,8 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
@@ -46,12 +48,18 @@ fun AddAccount(show: MutableState<Boolean>) {
                 TextField(
                     value = email.value,
                     onValueChange = { email.value = it },
-                    Modifier.background(color = Color.White, shape = RoundedCornerShape(32.dp))
+                    Modifier
+                        .background(
+                            color = Color.White, shape = RoundedCornerShape(64.dp)
+                        ),
+                    shape = RoundedCornerShape(16.dp)
                 )
+                Spacer(modifier = Modifier.height(8.dp))
                 TextField(
                     value = password.value,
                     onValueChange = { password.value = it },
-                    Modifier.background(color = Color.White, shape = RoundedCornerShape(32.dp))
+                    Modifier.background(color = Color.White, shape = RoundedCornerShape(64.dp)),
+                    shape = RoundedCornerShape(16.dp)
                 )
                 Row() {
                     Button(onClick = { show.value = false }) {
