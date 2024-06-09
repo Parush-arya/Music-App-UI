@@ -108,7 +108,7 @@ fun MainView(modifier: Modifier, navController: NavHostController, show: Mutable
                         modifier = Modifier.fillMaxWidth()
                     ) {
                         Button(
-                            onClick = { /*TODO*/ },
+                            onClick = { navController.navigate("Home") },
                             Modifier.background(
                                 color = Color.Transparent,
                                 shape = RoundedCornerShape(0.dp)
@@ -128,7 +128,7 @@ fun MainView(modifier: Modifier, navController: NavHostController, show: Mutable
                         }
 
                         Button(
-                            onClick = { /*TODO*/ },
+                            onClick = { navController.navigate("Browse") },
                             Modifier.background(
                                 color = Color.Transparent,
                                 shape = RoundedCornerShape(0.dp)
@@ -194,6 +194,18 @@ fun MainView(modifier: Modifier, navController: NavHostController, show: Mutable
 
                     composable("Subscription") {
                         Subscription()
+                    }
+
+                    composable("Home") {
+                        Home()
+                    }
+
+                    composable("Browse") {
+                        Browse()
+                    }
+
+                    composable("Library") {
+
                     }
                 }
             }
